@@ -4,22 +4,52 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sudoku Game</title>
+    <title>Sudoku Master</title>
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <div class="game">
-        <h1>Sudoku</h1>
-        <p>Fill the empty cells with numbers 1–9</p>
-        <div id="board"></div>
-        <div class="numbers" id="numbers"></div>
-        <div class="buttons">
-            <button id="check">Check</button>
+    <main class="game">
+        <h1>Sudoku Master</h1>
+        <p class="subtitle">Challenge your brain, one number at a time.</p>
+
+        <div class="stats">
+            <div>
+                <span>TIME</span>
+                <strong id="timer">00:00</strong>
+            </div>
+            <div>
+                <span>MISTAKES</span>
+                <strong id="mistakes">0 / 3</strong>
+            </div>
+        </div>
+
+        <div class="settings">
+            <label for="difficulty">Difficulty</label>
+            <select id="difficulty">
+                <option value="easy">Easy</option>
+                <option value="medium">Medium</option>
+                <option value="hard">Hard</option>
+            </select>
             <button id="newGame">New Game</button>
         </div>
-        <p id="message"></p>
-    </div>
+
+        <div id="board" aria-label="Sudoku board"></div>
+
+        <div id="message" role="status">Select an empty cell to begin.</div>
+
+        <div class="number-pad" id="numbers"></div>
+
+        <div class="tools">
+            <button id="erase">Erase</button>
+            <button id="pencil">Pencil: Off</button>
+            <button id="hint">Hint</button>
+            <button id="reset">Reset Board</button>
+        </div>
+
+        <button id="check" class="check-button">Check Board</button>
+    </main>
+
     <script src="script.js"></script>
 </body>
 
