@@ -1,0 +1,138 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #eef2ff;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.game {
+    background: white;
+    padding: 25px;
+    border-radius: 16px;
+    box-shadow: 0 8px 25px #00000015;
+    text-align: center;
+    width: 100%;
+    max-width: 500px;
+}
+
+h1 {
+    color: #3730a3;
+    margin-bottom: 10px;
+}
+
+p {
+    color: #64748b;
+    margin-bottom: 20px;
+}
+
+#board {
+    display: grid;
+    grid-template-columns: repeat(9, 1fr);
+    width: 100%;
+    aspect-ratio: 1;
+    border: 2px solid #1e293b;
+}
+
+.cell {
+    min-width: 0;
+    border: 1px solid #cbd5e1;
+    background: white;
+    color: #3730a3;
+    font-size: clamp(12px, 3.5vw, 22px);
+    text-align: center;
+    width: 100%;
+    aspect-ratio: 1;
+    outline: none;
+}
+
+.cell:focus {
+    background: #dbeafe;
+}
+
+.cell.fixed {
+    background: #e2e8f0;
+    color: #0f172a;
+    font-weight: bold;
+}
+
+.cell:nth-child(3n) {
+    border-right: 2px solid #1e293b;
+}
+
+.cell:nth-child(9n) {
+    border-right: none;
+}
+
+.cell:nth-child(n+19):nth-child(-n+27),
+.cell:nth-child(n+46):nth-child(-n+54) {
+    border-bottom: 2px solid #1e293b;
+}
+
+.numbers {
+    display: grid;
+    grid-template-columns: repeat(9, 1fr);
+    gap: 5px;
+    margin-top: 18px;
+}
+
+.numbers button {
+    padding: 10px 0;
+    border: none;
+    border-radius: 6px;
+    background: #e0e7ff;
+    color: #3730a3;
+    font-size: 17px;
+    cursor: pointer;
+}
+
+.numbers button:hover {
+    background: #c7d2fe;
+}
+
+.buttons {
+    display: flex;
+    gap: 10px;
+    margin-top: 18px;
+}
+
+.buttons button {
+    flex: 1;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    background: #4f46e5;
+    color: white;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.buttons button:hover {
+    background: #3730a3;
+}
+
+#message {
+    margin-top: 18px;
+    margin-bottom: 0;
+    font-weight: bold;
+}
+
+@media (max-width: 400px) {
+    .game {
+        padding: 12px;
+    }
+    .numbers {
+        gap: 3px;
+    }
+    .numbers button {
+        padding: 8px 0;
+    }
+}
